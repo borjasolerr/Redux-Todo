@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../actions';
 
 const initialState = [];
 let todoID = 0;
@@ -16,6 +16,8 @@ export default (state = initialState, action) => {
       ];
     case TOGGLE_TODO:
       return state.map(todo => (todo.id === action.payload ? { ...todo, complete: !todo.complete } : todo));
+    case DELETE_TODO:
+      return state.filter(todo => todo.id !== action.payload);
     default:
       return state;
   }
