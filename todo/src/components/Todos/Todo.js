@@ -5,20 +5,19 @@ import { connect } from 'react-redux';
 
 const Todo = props => {
   return (
-    <div>
+    <div
+      onClick={() => {
+        props.toggleTodo(props.todo.id);
+      }}
+      className={`todo ${props.todo.complete ? 'completed' : null}`}>
+      <div>{props.todo.text}</div>
       <div
         onClick={() => {
-          props.toggleTodo(props.todo.id);
-        }}
-        className={props.todo.complete ? 'completed' : null}>
-        {props.todo.text}
-      </div>
-      <span
-        onClick={() => {
           props.deleteTodo(props.todo.id);
-        }}>
+        }}
+        className="cross">
         X
-      </span>
+      </div>
     </div>
   );
 };

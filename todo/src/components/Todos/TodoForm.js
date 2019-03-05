@@ -23,7 +23,7 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="todo-form">
         <form
           onSubmit={e => {
             this.addTodo(e);
