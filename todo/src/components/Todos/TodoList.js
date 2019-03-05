@@ -3,28 +3,15 @@ import Todo from './Todo';
 
 import { connect } from 'react-redux';
 
-class TodoList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: []
-    };
-  }
-
-  componentDidMount() {
-    this.setState({ todos: this.props.todos });
-  }
-
-  render() {
-    return (
-      <div>
-        {this.props.todos.map(todo => (
-          <Todo key={todo.text} todo={todo} />
-        ))}
-      </div>
-    );
-  }
-}
+const TodoList = props => {
+  return (
+    <div>
+      {props.todos.map(todo => (
+        <Todo key={todo.id} todo={todo} />
+      ))}
+    </div>
+  );
+};
 
 const mapStateToProps = state => {
   return {
