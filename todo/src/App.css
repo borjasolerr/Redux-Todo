@@ -1,0 +1,81 @@
+.App {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 1px rgba(255, 254, 254, 0.25);
+  background-color: #464646;
+  color: white;
+}
+
+.todo-form {
+  margin-bottom: 20px;
+}
+
+.todo-container {
+  width: 100%;
+}
+
+.todo-tabs {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.todo-tabs h2 {
+  width: 30%;
+  height: 32px;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  background-color: #bbf5d5;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.todo-tabs h2:nth-of-type(-n + 2) {
+  border-right: 1px solid #000;
+}
+
+.todo-list {
+  width: 100%;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding: 5px;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  background-color: #81f1b2;
+}
+
+.completed {
+  background-color: rgba(201, 200, 200, 0.4);
+}
+
+.completed div:not(.cross) {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-tabs .selected {
+  background-color: #81f1b2;
+  box-shadow: inset 3px 3px 5px rgb(0, 0, 0, 0.25);
+}
